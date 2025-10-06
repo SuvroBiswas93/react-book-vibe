@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Navbar = () => {
    const links = <>
-   <li className ="m-2 cursor-pointer border-1 border-green-400 px-3 py-1 rounded-md text-green-500 ">Home</li>
-   <li className='m-2 cursor-pointer'>Listed Books</li>
+   <Link to='/'> <li className ="m-2 cursor-pointer border-1 border-green-400 px-3 py-1 rounded-md text-green-500 ">Home</li></Link>
+   <Link to='/listedbooks'><li className='m-2 cursor-pointer border-1 border-green-400 px-3 py-1 rounded-md text-green-500'>Listed Books</li></Link>
    <li className='m-2 cursor-pointer'>Pages To Read</li>
    </>
     return (

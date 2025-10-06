@@ -1,5 +1,5 @@
 import React from 'react';
-import bookImg from '../../assets/books.jpg'
+import bookImg from '../../assets/pngwing.png'
 const Banner = () => {
     return (
         <div className='flex  flex-col md:flex-row md:justify between items-center gap-4 md:gap-8 p-4 md:p-15 bg-gray-200 rounded-xl'>
