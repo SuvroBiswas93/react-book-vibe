@@ -1,16 +1,22 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addItemToStore } from '../../Utility/addToDB';
 
 const BookDetails = () => {
     const {id} =useParams()
     const bookId = parseInt(id)
     const data =useLoaderData()
-   const singleBook = data.find(book => book.bookId === bookId)
-   const {bookName,author,image,review,tags,totalPages,category,publisher,yearOfPublishing,rating}= singleBook
+    const singleBook = data.find(book => book.bookId === bookId)
+    const {bookName,author,image,review,tags,totalPages,category,publisher,yearOfPublishing,rating}= singleBook
+
+    const handlemarkAsRead =(id)=>{
+        addItemToStore(id)
+    }
+
     return (
         <div className='flex flex-col md:flex-row md:justify-between  gap-6 my-20 w-full'>
             <div className='bg-gray-200 rounded-xl flex justify-center py-20  md:w-1/2'>
-                <img src={image} alt="" className=''/>
+                <img src={image} alt="" className='w-[200px]'/>
             </div>
             <div className='md:w-1/2 space-y-2'>
                 <h3 className='text-2xl font-bold'>{bookName}</h3>
@@ -35,7 +41,7 @@ const BookDetails = () => {
                <div className="divider"></div>
 
                 <div className='flex gap-4 mt-4'>
-                    <button className='btn bg-red-300 '> Mark As Read</button>
+                    <button onClick={()=>handlemarkAsRead(id)} className='btn bg-red-300 '> Mark As Read</button>
                     <button className='btn bg-[#50B1C9] '>Add To WhishList</button>
 
                 </div>

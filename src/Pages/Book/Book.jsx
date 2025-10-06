@@ -3,7 +3,7 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import { Link } from 'react-router';
 
 const Book = ({singleBook}) => {
-   const {bookName,author,image,bookId,rating,tags,category} = singleBook
+   const {bookName,author,image,bookId,rating,tags,category,totalPages} = singleBook
 // console.log(singleBook)
   
     return (
@@ -28,6 +28,8 @@ const Book = ({singleBook}) => {
                 </h2>
                 
                 <h3 className=' mb-4 font-bold'>By : {author}</h3>
+                    <hr />
+                <h3 className=' mb-4 font-bold'>Pages : {totalPages}</h3>
                 
                 
                 <div className="card-actions flex justify-between">

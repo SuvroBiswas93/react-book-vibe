@@ -16,14 +16,11 @@ export const router = createBrowserRouter([
             index:true ,
             loader: ()=> fetch('/booksData.json'),
             path:'/',
-            element:<Suspense fallback={<h3>Loading...</h3>}>
-              <Home></Home>
-            </Suspense>
-
-
+            Component:Home
         },
         {
           path:'/listedbooks',
+          loader: ()=> fetch('/booksData.json'),
           Component:ListedBooks
         },
         {
